@@ -1,0 +1,33 @@
+{% extends 'showcase/base.html' %}
+
+{% block title %}
+    Showcase
+{% endblock title %}
+
+
+{% block content %}
+    
+    {% if brand_list %}
+        <h1 style='position:relative'>Производители</h1>
+        {% for brand in brand_list %}
+            <a href="{{ brand.get_absolute_url }}">{{ brand.brand_name }}</a><br>
+        {% endfor %}
+    {% else %}
+        Пока нет производителей  
+    {% endif %}
+    
+    {% if phone_list %}
+        <h1>Телефоны</h1>
+        {% for phone in phone_list  %}
+        <a href="{{ phone.phone_brand.get_absolute_url }}">{{ phone.phone_brand }}</a> <a href="{{ phone.get_absolute_url }}">{{ phone.phone_model }}</a><br>
+            <img src="{{ phone.phone_image.url }}" height="100"><br>
+        {% endfor %}
+        <a href="{% url 'phones' %}">Посмотреть все</a>
+            
+        
+    {% endif %}
+        
+<button type="submit" id="but" style="position: relative;">Animate Me</button>
+
+{% endblock content %}
+    

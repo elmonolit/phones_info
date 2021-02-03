@@ -1,0 +1,13 @@
+{% extends 'showcase/base.html' %}
+
+{% block title %}
+    {{ phone.phone_model }}
+{% endblock title %}
+
+{% block content %}
+    <h1><a href="{{phone.phone_brand.get_absolute_url }}">{{ phone.phone_brand }}</a> {{ phone.phone_model }}</h1><br>
+    <img src="{{ phone.phone_image.url }}"><br>
+    {{ phone.phone_specs }}
+{% endblock content %}
+    
+    

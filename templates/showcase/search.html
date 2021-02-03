@@ -1,0 +1,9 @@
+
+{% if search_list %} 
+    {% for el in search_list %}
+        <a href="{{ el.get_absolute_url }}">{{ el }}</a>  
+    {% endfor %}
+{% else %}
+    Нет результатов     
+{% endif %}
+    

@@ -1,0 +1,15 @@
+{% extends 'showcase/base.html' %}
+
+{% block title %}
+    Регистрация
+{% endblock title %}
+    
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Подтвердить</button>
+    </form>
+{% endblock content %}
+    

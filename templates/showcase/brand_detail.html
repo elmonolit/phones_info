@@ -1,0 +1,24 @@
+{% extends 'showcase/base.html' %}
+
+{% block title %}
+    {{ brand.brand_name }}
+{% endblock title %}
+
+
+{% block content %}
+    <h1>{{ brand.brand_name }}</h1><br>
+    <img src="{{ brand.brand_logo.url }}"><br>
+    
+    {% if brand.models_list.all %}
+        <h3>Телефоны</h3>
+        <ul>
+            {% for model in brand.models_list.all %}
+                <li><a href="{{ model.get_absolute_url }}">{{ model }}<br></a></li>
+            {% endfor %}
+        </ul>
+        
+            
+    {% endif %}
+        
+{% endblock content %}
+    
